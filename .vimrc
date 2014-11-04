@@ -131,3 +131,5 @@ fun! ShowFuncName()
 endfun
 map <S-f> :call ShowFuncName() <CR>
 
+" Custom settings
+source .vimrc_custom
