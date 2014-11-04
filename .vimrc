@@ -1,8 +1,31 @@
-" pathogen
-execute pathogen#infect()
+" Vundle
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'mhinz/vim-signify'
+Plugin 'edkolev/tmuxline.vim'
+call vundle#end()
+filetype plugin indent on
 
-" smarter tabs
+" Show list of buffers
 let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+let g:airline_symbols = {}
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " mouse mode
 if has('mouse')
@@ -13,10 +36,6 @@ endif
 set hlsearch
 set incsearch
 :nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-filetype on
-filetype plugin on
-filetype indent on
 
 set undolevels=1000
 set nocompatible
@@ -51,9 +70,9 @@ colorscheme xoria256-pluk
 " Toggle between source/header file
 map <F4> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
 
-" vim tabs
-map <C-h> <Esc>:tabprev<CR>
-map <C-l> <Esc>:tabnext<CR>
+" vim buffers
+map <C-h> <Esc>:bp<CR>
+map <C-l> <Esc>:bn<CR>
 
 " Show trailing whitespace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
