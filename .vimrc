@@ -10,6 +10,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'mhinz/vim-signify'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 filetype plugin indent on
 
@@ -58,9 +59,12 @@ set laststatus=2
 set showmode
 set mousehide
 set wildmenu
+set cursorline
 set background=dark
 set diffopt+=vertical
-set scrolloff=10
+set scrolloff=6
+set splitbelow
+set splitright
 set noswapfile
 set nobackup
 set nowb
