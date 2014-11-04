@@ -132,4 +132,5 @@ endfun
 map <S-f> :call ShowFuncName() <CR>
 
 " Custom settings
-source .vimrc_custom
+let CUSTOMVIMRC=expand("~/.vimrc_custom")
+if filereadable(CUSTOMVIMRC) | exe "source " . CUSTOMVIMRC | endif
