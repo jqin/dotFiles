@@ -17,7 +17,7 @@ filetype plugin indent on
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-
+" Airline symbols
 let g:airline_symbols = {}
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
@@ -61,18 +61,23 @@ set wildmenu
 set background=dark
 set diffopt+=vertical
 set scrolloff=10
+set noswapfile
+set nobackup
+set nowb
 
 syntax on
 set t_Co=256
 colorscheme xoria256-pluk
-"colorscheme zenburn
+let mapleader=','
 
 " Toggle between source/header file
 map <F4> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
 
 " vim buffers
-map <C-h> <Esc>:bp<CR>
-map <C-l> <Esc>:bn<CR>
+nmap <C-h> <Esc>:bp<CR>
+nmap <C-l> <Esc>:bn<CR>
+nmap <leader>bq :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
 
 " Show trailing whitespace and spaces before a tab:
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
