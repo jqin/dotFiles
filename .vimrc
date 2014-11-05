@@ -28,6 +28,9 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" Let syntastic check on open as well
+let g:syntastic_check_on_open=1
+
 " mouse mode
 if has('mouse')
     set mouse=a
@@ -67,6 +70,7 @@ set splitbelow
 set splitright
 set noswapfile
 set nobackup
+set nowritebackup
 set nowb
 
 syntax on
@@ -131,6 +135,7 @@ fun! ShowFuncName()
 endfun
 map <S-f> :call ShowFuncName() <CR>
 
-" Custom settings
-let CUSTOMVIMRC=expand("~/.vimrc_custom")
-if filereadable(CUSTOMVIMRC) | exe "source " . CUSTOMVIMRC | endif
+" Local config
+if filereadable("~/.vimrc.local")
+    source ~/.vimrc.local
+endif
