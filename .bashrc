@@ -1,10 +1,6 @@
 # PATH
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -25,10 +21,6 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -95,12 +87,20 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more aliases
+# Aliases
 alias ll='ls -alFGp'
 alias la='ls -A'
 alias l='ls -CF'
 alias tmux='tmux -2'
 alias g='git'
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd ~"
+alias -- -="cd -"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
