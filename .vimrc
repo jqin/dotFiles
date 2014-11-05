@@ -78,8 +78,8 @@ let mapleader=','
 map <F4> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
 
 " vim buffers
-nmap <C-h> <Esc>:bp<CR>
-nmap <C-l> <Esc>:bn<CR>
+nmap <leader>h  :bp<CR>
+nmap <leader>l  :bn<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 

@@ -83,9 +83,6 @@ PROMPT_COMMAND=timer_stop
 
 PS1='\[\033[01;32m\][\u@\h ${timer_show}s] \[\033[01;34m\]\w \$\[\033[00m\] '
 
-
-#\[\033[01;32m\][\u@\h ${timer_show}s] \[\033[01;34m\]\w \$\[\033[00m\] '
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -103,6 +100,7 @@ alias ll='ls -alFGp'
 alias la='ls -A'
 alias l='ls -CF'
 alias tmux='tmux -2'
+alias g='git'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -131,4 +129,22 @@ fi
 # ls colors
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+# Case insensitive tab completion
+bind "set completion-ignore-case on"
+
+# Only tab once when there is more than 1 match
+bind "set show-all-if-ambiguous on"
+
+# Case insensitive search for tab
+shopt -s nocaseglob
+
+# Autocorrect typos
+shopt -s cdspell
+
+# Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
+
+# Custom settings
+CUSTOMBASHRC=~/.bashrc_custom && test -f $CUSTOMBASHRC && source $CUSTOMBASHRC
 
