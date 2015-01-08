@@ -7,11 +7,18 @@
 
     co = checkout
     st = status
+
+[diff]
+    tool = vimdiff
+
 [user]
     name = Jay Qin
     email = jay@jayqin.com
+
 [core]
     editor = /usr/bin/vim
     excludesfile = ~/.gitignore
+
 [push]
-	default = simple
+    default = simple
+
