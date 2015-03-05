@@ -1,15 +1,11 @@
 [alias]
     s = status
     co = checkout
-    st = status
     c = commit
     cm = commit -m
     d = diff --color-words
     dh = diff --color-words head
     alias = !git config --list | grep 'alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
-
-[diff]
-    tool = vimdiff
 
 [user]
     name = Jay Qin
