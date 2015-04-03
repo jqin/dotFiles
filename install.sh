@@ -9,7 +9,7 @@
 # dotfiles directory
 dir=~/dotFiles
 # list of files/folders to symlink in homedir
-files=".bashrc .gitconfig .gitignore .tmux.conf .tmux_snapshot .vimrc"
+files=".bashrc .gitconfig .gitignore .tmux.conf .tmux_snapshot .vimrc .git-completion.bash .git-prompt.sh"
 
 ##########
 

@@ -65,15 +65,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 # BASH Prompt
 function timer_start {
     timer=${timer:-$SECONDS}
@@ -87,7 +78,18 @@ function timer_stop {
 trap 'timer_start' DEBUG
 PROMPT_COMMAND=timer_stop
 
+#git - start
+# Set git autocompletion and PS1 integration
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+export PS1='\[\033[32m\]\u:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 PS1='\[\033[01;32m\][\u@\h ${timer_show}s] \[\033[01;34m\]\w \$\[\033[00m\] '
+PS1='\[\033[32m\]\u:\[\033[01;34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+#git - end
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -107,6 +109,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias tmux='tmux -2'
 alias g='git'
+alias vic='vim ~/.bashrc'
+alias sic='source ~/.bashrc'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
