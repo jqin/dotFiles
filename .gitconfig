@@ -1,11 +1,36 @@
 [alias]
-    s = status
+    dh = diff --color-words head
+    dl = "!git ll -1"
+    dlc = diff --cached HEAD^
+
+    # find file path in codebase
+    f = "!git ls-files | grep -i"
+
+    # see all commits related to a file
+    filelog = log -u
+    fl = log -u
+
+    # grep entire codebase
+    grep = grep -Ii
+
+    # list commits
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+
+    ci = commit
     co = checkout
-    c = commit
     cm = commit -m
     d = diff --color-words
-    dh = diff --color-words head
+    st = status
+
+    # stash related
+    sl = stash list
+    ss = stash save
+
     alias = !git config --list | grep 'alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+    la = "!git config -l | grep alias | cut -c 7-"
 
 [user]
     name = Jay Qin
