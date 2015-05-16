@@ -9,7 +9,7 @@
 # dotfiles directory
 dir=~/dotFiles
 # list of files/folders to symlink in homedir
-files=".bashrc .gitconfig .gitignore .tmux.conf .tmux_snapshot .vimrc .git-completion.bash .git-prompt.sh"
+files=".zshrc .bashrc .gitconfig .gitignore .tmux.conf .tmux_snapshot .vimrc .git-completion.bash .git-prompt.sh"
 
 ##########
 
@@ -24,4 +24,4 @@ for file in $files; do
     ln -sf $dir/$file ~/$file
 done
 
-source ~/.bashrc
+source ~/.zshrc
