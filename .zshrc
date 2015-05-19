@@ -58,7 +58,7 @@ setopt APPEND_HISTORY
 setopt INC_APPEND_HISTORY
 
 # Killer: share history between multiple shells
-setopt SHARE_HISTORY
+setopt NO_SHARE_HISTORY
 
 # If I type cd and then cd again, only save the last one
 setopt HIST_IGNORE_DUPS
