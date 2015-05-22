@@ -80,6 +80,7 @@ bindkey "^[s" insert-sudo
 
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
+alias ezl='vim ~/.zshrc.local'
 alias vi='vim'
 alias grep='grep --color=auto'
 alias tmux='tmux -2'
