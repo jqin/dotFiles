@@ -1,7 +1,7 @@
 [alias]
     dh = diff --color-words head
     dl = "!git ll -1"
-    dlc = diff --cached HEAD^
+    dc = diff --cached
 
     # find file path in codebase
     f = "!git ls-files | grep -i"
