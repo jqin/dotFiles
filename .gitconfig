@@ -28,6 +28,7 @@
     # stash related
     sl = stash list
     ss = stash save
+    sp = stash pop
 
     alias = !git config --list | grep 'alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
     la = "!git config -l | grep alias | cut -c 7-"
