@@ -24,4 +24,14 @@ for file in $files; do
     ln -sf $dir/$file ~/$file
 done
 
+# install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# install vim theme
+mkdir -p ~/.vim/colors
+cp ~/dotFiles/.vim/colors/xoria256-pluk.vim ~/.vim/colors/xoria256-pluk.vim
+
 source ~/.zshrc
