@@ -26,12 +26,16 @@
     st = status
 
     # stash related
-    sl = stash list
+    sl = "!git --no-pager stash list"
     ss = stash save
     sp = stash pop
 
     alias = !git config --list | grep 'alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
     la = "!git config -l | grep alias | cut -c 7-"
+    stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0 ] && git stash pop stash@{1}; }; _"
+    lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+    personalprofile = config user.email \"jay@jayqin.com\"
+    workprofile = config user.email \"jay.qin@revinate.com\"
 
 [user]
     name = Jay Qin
@@ -44,3 +48,12 @@
 [push]
     default = simple
 
+[merge]
+    tool = phpstorm
+[mergetool "phpstorm"]
+    cmd = /Applications/PhpStorm.app/Contents/MacOS/phpstorm merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+    trustExitCode = true
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
