@@ -5,13 +5,13 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
 Plug 'mhinz/vim-signify'
 Plug 'edkolev/tmuxline.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 filetype plugin indent on
 call plug#end()
