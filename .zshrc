@@ -87,3 +87,9 @@ alias tmux='tmux -2'
 alias g='git'
 
 LOCALZSHRC=~/.zshrc.local && test -f $LOCALZSHRC && source $LOCALZSHRC
+
+# vi style incremental search
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward  
