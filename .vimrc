@@ -4,7 +4,6 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 
 call plug#begin('~/.vim/plugged')
-
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
@@ -12,6 +11,9 @@ Plug 'mhinz/vim-signify'
 Plug 'edkolev/tmuxline.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'fatih/vim-go'
+Plug 'Shougo/neocomplete'
 
 filetype plugin indent on
 call plug#end()
@@ -32,6 +34,19 @@ let g:airline_symbols.linenr = ''
 
 " Let syntastic check on open as well
 let g:syntastic_check_on_open=1
+
+" enable neocomplete for autocompletion
+let g:neocomplete#enable_at_startup = 1
+
+" Go: syntax highlighting for functions
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Go: automatically insert import paths
+let g:go_fmt_command = "goimports"
 
 " mouse mode
 if has('mouse')
@@ -136,6 +151,8 @@ fun! ShowFuncName()
   call search("\\%" . lnum . "l" . "\\%" . col . "c")
 endfun
 map <S-f> :call ShowFuncName() <CR>
+
+nnoremap <silent> <Leader><Leader> :FZF -m<CR>
 
 " Local config
 if filereadable("~/.vimrc.local")
