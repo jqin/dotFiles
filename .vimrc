@@ -13,6 +13,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
 Plug 'Shougo/neocomplete'
+Plug 'kana/vim-operator-user'
+Plug 'haya14busa/vim-operator-flashy'
 
 filetype plugin indent on
 call plug#end()
@@ -67,7 +69,11 @@ function! LightLineFilename()
   return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-  endfunction
+endfunction
+
+" Highlight yanked area
+map y <Plug>(operator-flashy)
+nmap Y <Plug>(operator-flashy)$
 
 " Let syntastic check on open as well
 let g:syntastic_check_on_open=1
