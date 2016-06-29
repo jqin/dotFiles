@@ -12,7 +12,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
-Plug 'Shougo/neocomplete'
 Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
 
@@ -77,9 +76,6 @@ nmap Y <Plug>(operator-flashy)$
 
 " Let syntastic check on open as well
 let g:syntastic_check_on_open=1
-
-" enable neocomplete for autocompletion
-let g:neocomplete#enable_at_startup = 1
 
 " Go: syntax highlighting for functions
 let g:go_highlight_functions = 1
