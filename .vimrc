@@ -14,6 +14,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
 Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 filetype plugin indent on
 call plug#end()
