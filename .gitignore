@@ -8,4 +8,4 @@ tags
 !tags/
 tmp/**/*
 !tmp/cache/.keep
-.vim/autoload
+.vim/
