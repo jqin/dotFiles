@@ -8,6 +8,7 @@ help:
 	@echo '   make install_vim                 install vim conf files             '
 	@echo '   make install_tmux                install tmux conf files            '
 	@echo '   make install_git                 install git conf files             '
+	@echo '   make install_other               install all other conf files       '
 	@echo '                                                                       '
 
 all: install_bash install_oh_my_zsh install_zsh install_vim install_tmux install_git
@@ -41,3 +42,6 @@ install_git:
 	ln -sf `pwd`/.gitignore           ~/.gitignore
 	ln -sf `pwd`/.git-completion.bash ~/.git-completion.bash
 	ln -sf `pwd`/.git-prompt.sh       ~/.git-prompt.sh
+
+install_other:
+	ln -sf `pwd`/.ansible.cfg ~/.ansible.cfg
