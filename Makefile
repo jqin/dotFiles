@@ -11,7 +11,7 @@ help:
 	@echo '   make install_other               install all other conf files       '
 	@echo '                                                                       '
 
-all: install_bash install_oh_my_zsh install_zsh install_vim install_tmux install_git
+all: install_bash install_oh_my_zsh install_zsh install_vim install_tmux install_git install_other
 	@echo "==========================="
 	@echo "Installing all dot files..."
 	@echo "==========================="
