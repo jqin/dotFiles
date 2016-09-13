@@ -878,9 +878,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 769 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>737 151 1018 447 0 0 2560 1417 </string>
+	<string>737 151 796 473 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 991 711 0 0 2560 1417 </string>
+	<string>0 0 1270 1216 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>790 340 1074 864 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2276,7 +2276,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>70</integer>
+			<integer>40</integer>
 			<key>Screen</key>
 			<integer>0</integer>
 			<key>Scrollback Lines</key>
@@ -2541,7 +2541,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-30T17:51:47Z</date>
+	<date>2016-09-13T21:28:02Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -2591,6 +2591,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.8</string>
+	<string>3.0.9</string>
 </dict>
 </plist>
