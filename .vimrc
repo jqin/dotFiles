@@ -1,6 +1,9 @@
-" Plug
-if empty(glob("~/.vim/autoload/plug.vim"))
-    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+" Install Plug if missing
+let pluginstall=system("[ -e ~/.vim/autoload/plug.vim ] ; echo $?")
+if pluginstall != 0
+  let temp=system("curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
+  so ~/.vim/autoload/plug.vim
 endif
 
 call plug#begin('~/.vim/plugged')
