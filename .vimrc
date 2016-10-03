@@ -78,19 +78,6 @@ endfunction
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
-" Let syntastic check on open as well
-let g:syntastic_check_on_open=1
-
-" Go: syntax highlighting for functions
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" Go: automatically insert import paths
-let g:go_fmt_command = "goimports"
-
 " mouse mode
 if has('mouse')
     set mouse=a
@@ -113,7 +100,7 @@ set smartcase
 set smartindent
 set autoindent
 set noexpandtab
-set tabstop=8
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set ignorecase
@@ -156,34 +143,6 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 " cursor stuff
 set guicursor=n-v-c:block-Cursor-blinkon0,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor,r-cr:hor20-Cursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
-
-" Fix common spelling mistakes
-iab teh       the
-iab Teh       The
-iab taht      that
-iab Taht      That
-iab alos      also
-iab Alos      Also
-iab aslo      also
-iab Aslo      Also
-iab becuase   because
-iab Becuase   Because
-iab bianry    binary
-iab Bianry    Binary
-iab bianries  binaries
-iab Bianries  Binaries
-iab charcter  character
-iab Charcter  Character
-iab charcters characters
-iab Charcters Characters
-iab exmaple   example
-iab Exmaple   Example
-iab exmaples  examples
-iab Exmaples  Examples
-iab shoudl    should
-iab Shoudl    Should
-iab seperate  separate
-iab Seperate  Separate
 
 fun! ShowFuncName()
   let lnum = line(".")
