@@ -878,9 +878,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 769 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>737 151 796 473 0 0 2560 1417 </string>
+	<string>273 285 918 498 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1270 1216 0 0 2560 1417 </string>
+	<string>0 0 2327 706 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>790 340 1074 864 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2438,7 +2438,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>8</integer>
+			<integer>0</integer>
 			<key>Working Directory</key>
 			<string>/Users/jay</string>
 		</dict>
@@ -2457,6 +2457,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>BE9EA85E-4A81-4B7F-94F0-3C98E320A3B7</string>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
+	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2541,7 +2543,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-09-13T21:28:02Z</date>
+	<date>2016-09-20T18:32:09Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
