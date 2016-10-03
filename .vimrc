@@ -1,4 +1,4 @@
-" Install Plug if missing
+" Install vim-plug if missing
 let pluginstall=system("[ -e ~/.vim/autoload/plug.vim ] ; echo $?")
 if pluginstall != 0
   let temp=system("curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -6,20 +6,19 @@ if pluginstall != 0
   so ~/.vim/autoload/plug.vim
 endif
 
+" Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
-Plug 'itchyny/lightline.vim'
-Plug 'edkolev/tmuxline.vim'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-fugitive'                 " Used by lightline for git
+Plug 'itchyny/lightline.vim'              " Bottom status bar
+Plug 'edkolev/tmuxline.vim'               " Integration for tmux with lightline
+Plug 'christoomey/vim-tmux-navigator'     " Navigate between vim and tmux
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'fatih/vim-go'
-Plug 'kana/vim-operator-user'
-Plug 'haya14busa/vim-operator-flashy'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'pearofducks/ansible-vim'
+Plug 'kana/vim-operator-user'             " Dependency for vim-operator-flashy
+Plug 'haya14busa/vim-operator-flashy'     " Highlight yanked area
+Plug 'octol/vim-cpp-enhanced-highlight'   " Enhanced C++ highlighting
+Plug 'pearofducks/ansible-vim'            " Proper formatting for Ansible
 
-filetype plugin indent on
+filetype plugin on
 call plug#end()
 
 " Lightline
@@ -78,24 +77,21 @@ endfunction
 map y <Plug>(operator-flashy)
 nmap Y <Plug>(operator-flashy)$
 
-" mouse mode
+" Mouse mode
 if has('mouse')
     set mouse=a
 endif
 
-" highlight search terms
-set hlsearch
-set incsearch
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
-set undolevels=1000
-set nocompatible
+set hlsearch            " Hightlight search results
+set incsearch           " Incremental search
+set undolevels=1000     " Levels for undo
+set nocompatible        " Enable the cool features of vim
 set hidden
 set backspace=2
 set ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
-set number
-set cindent
+set number              " Show line numbers
+set cindent             " Use C indentation levels
 set smartcase
 set smartindent
 set autoindent
@@ -108,8 +104,9 @@ set pastetoggle=<F12>
 set laststatus=2
 set showmode
 set mousehide
-set wildmenu
-set cursorline
+set wildmenu           " Visual complete for command menu
+set cursorline         " Hightlight current line
+set lazyredraw         " Redraw only when needed (speeds up macros)
 set background=dark
 set diffopt+=vertical
 set scrolloff=6
@@ -119,6 +116,9 @@ set noswapfile
 set nobackup
 set nowritebackup
 set nowb
+
+" Clear out highlighted search results
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
 syntax on
 set t_Co=256
