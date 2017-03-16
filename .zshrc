@@ -12,7 +12,7 @@ DEFAULT_USER="jay"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose)
+plugins=(git docker docker-compose httpie)
 
 # User configuration
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -65,6 +65,19 @@ insert_sudo () { zle beginning-of-line; zle -U "sudo " }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
+# Show runtime of last command on the right
+function preexec() {
+  timer=${timer:-$SECONDS}
+}
+
+function precmd() {
+  if [ $timer ]; then
+    timer_show=$(($SECONDS - $timer))
+    export RPROMPT="%F{cyan}${timer_show}s %{$reset_color%}"
+    unset timer
+  fi
+}
+
 LOCALZSHRC=~/.zshrc.local && test -f $LOCALZSHRC && source $LOCALZSHRC
 
 # vi style incremental search
@@ -72,3 +85,4 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
+$(dinghy shellinit)
