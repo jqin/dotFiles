@@ -5,7 +5,10 @@ export ZSH=~/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time time)
+POWERLEVEL9K_TIME_FORMAT="%D{%I:%M:%S %p}"
 DEFAULT_USER="jay"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -77,24 +80,6 @@ setopt HIST_REDUCE_BLANKS
 # If a line starts with a space, don't save it.
 setopt HIST_IGNORE_SPACE
 setopt HIST_NO_STORE
-
-# alt-s = insert sudo at beginning of line
-insert_sudo () { zle beginning-of-line; zle -U "sudo " }
-zle -N insert-sudo insert_sudo
-bindkey "^[s" insert-sudo
-
-# Show runtime of last command on the right
-function preexec() {
-  timer=${timer:-$SECONDS}
-}
-
-function precmd() {
-  if [ $timer ]; then
-    timer_show=$(($SECONDS - $timer))
-    export RPROMPT="%F{cyan}${timer_show}s %{$reset_color%}"
-    unset timer
-  fi
-}
 
 LOCALZSHRC=~/.zshrc.local && test -f $LOCALZSHRC && source $LOCALZSHRC
 
