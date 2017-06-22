@@ -38,6 +38,9 @@ bindkey " " globalias
 bindkey "^ " magic-space           # control-space to bypass completion
 bindkey -M isearch " " magic-space # normal space during searches
 
+# Unbind all oh-my-zsh aliases
+unalias -m '*'
+
 alias -g T='| tail'
 alias -g G='| grep'
 
