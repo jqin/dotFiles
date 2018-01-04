@@ -47,6 +47,7 @@ alias -g T='| tail'
 alias -g G='| grep'
 
 # Aliases
+alias ls='ls -G'
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias ezl='vim ~/.zshrc.local'
@@ -54,6 +55,7 @@ alias vi='vim'
 alias grep='grep --color=auto'
 alias tmux='tmux -2'
 alias g='git'
+alias gp='git pull'
 
 # Where it gets saved
 HISTFILE=~/.history
