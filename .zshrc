@@ -17,37 +17,18 @@ DEFAULT_USER="jay"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose httpie zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting)
 
 # User configuration
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/sbin:~/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 
-# Global aliases
-globalias() {
-   if [[ $LBUFFER =~ '[A-Za-z0-9]+$' ]]; then
-     zle _expand_alias
-     zle expand-word
-   fi
-   zle self-insert
-}
-
-zle -N globalias
-
-bindkey " " globalias
-bindkey "^ " magic-space           # control-space to bypass completion
-bindkey -M isearch " " magic-space # normal space during searches
-
 # Unbind all oh-my-zsh aliases
 unalias -m '*'
 
-alias -g T='| tail'
-alias -g G='| grep'
-
 # Aliases
-alias ls='ls -G'
 alias sz='source ~/.zshrc'
 alias ez='vim ~/.zshrc'
 alias ezl='vim ~/.zshrc.local'
@@ -95,8 +76,4 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
-
-if (( $+commands[dinghy] )); then
-	$(dinghy shellinit)
-fi
 
