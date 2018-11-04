@@ -15,7 +15,6 @@ Plug 'christoomey/vim-tmux-navigator'     " Navigate between vim and tmux
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'kana/vim-operator-user'             " Dependency for vim-operator-flashy
 Plug 'haya14busa/vim-operator-flashy'     " Highlight yanked area
-Plug 'pearofducks/ansible-vim'            " Proper formatting for Ansible
 
 filetype plugin on
 call plug#end()
