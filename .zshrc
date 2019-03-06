@@ -46,28 +46,15 @@ SAVEHIST=10000
 HISTSIZE=10000
 
 setopt NO_BEEP
-
-# Don't overwrite, append!
-setopt APPEND_HISTORY
-
-# Write after each command
-setopt INC_APPEND_HISTORY
-
-# Killer: share history between multiple shells
-setopt NO_SHARE_HISTORY
-
-# If I type cd and then cd again, only save the last one
-setopt HIST_IGNORE_DUPS
-
-# Even if there are commands inbetween commands that are the same, still only save the last one
-setopt HIST_IGNORE_ALL_DUPS
-
-# Pretty    Obvious.  Right?
+setopt APPEND_HISTORY       # Don't overwrite, append!
+setopt INC_APPEND_HISTORY   # Write after each command
+setopt NO_SHARE_HISTORY     # Killer: share history between multiple shells
+setopt HIST_IGNORE_DUPS     # If I type cd and then cd again, only save the last one
+setopt HIST_IGNORE_ALL_DUPS # Even if there are commands inbetween commands that are the same, still only save the last one
 setopt HIST_REDUCE_BLANKS
-
-# If a line starts with a space, don't save it.
-setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_SPACE    # If a line starts with a space, don't save it.
 setopt HIST_NO_STORE
+unsetopt NOMATCH            # no error if glob fails to expand
 
 LOCALZSHRC=~/.zshrc.local && test -f $LOCALZSHRC && source $LOCALZSHRC
 
