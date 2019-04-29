@@ -7,10 +7,7 @@ export TERM="xterm-256color"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time time)
-POWERLEVEL9K_TIME_FORMAT="%D{%I:%M:%S %p}"
+ZSH_THEME="agnoster"
 DEFAULT_USER="jay"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -35,7 +32,6 @@ alias ezl='vim ~/.zshrc.local'
 alias vi='vim'
 alias grep='grep --color=auto'
 alias tmux='tmux -2'
-alias g='git'
 alias gp='git pull'
 
 # Where it gets saved
@@ -55,6 +51,8 @@ setopt HIST_REDUCE_BLANKS
 setopt HIST_IGNORE_SPACE    # If a line starts with a space, don't save it.
 setopt HIST_NO_STORE
 unsetopt NOMATCH            # no error if glob fails to expand
+
+setopt PROMPT_SUBST
 
 LOCALZSHRC=~/.zshrc.local && test -f $LOCALZSHRC && source $LOCALZSHRC
 
