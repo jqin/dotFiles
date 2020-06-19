@@ -106,7 +106,7 @@ set wildmenu           " Visual complete for command menu
 set cursorline         " Hightlight current line
 set lazyredraw         " Redraw only when needed (speeds up macros)
 set background=dark
-set diffopt+=vertical
+set diffopt=vertical
 set scrolloff=6
 set splitbelow
 set splitright
