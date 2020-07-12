@@ -18,7 +18,7 @@ all: install_oh_my_zsh install_zsh install_vim install_tmux install_git
 install_oh_my_zsh:
 	@echo Installing oh-my-zsh
 	sh -c "$$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-	git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
 
 install_zsh:
 	ln -sf `pwd`/.zshrc ~/.zshrc
