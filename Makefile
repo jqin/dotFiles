@@ -19,6 +19,7 @@ install_oh_my_zsh:
 	@echo Installing oh-my-zsh
 	sh -c "$$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/themes/powerlevel10k
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
 install_zsh:
 	ln -sf `pwd`/.zshrc ~/.zshrc
