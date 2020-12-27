@@ -37,8 +37,8 @@
     personalprofile = config user.email \"jay@jayqin.com\"
 
 [user]
-    name = Jay Qin
-    email = jay@jayqin.com
+	name = Jay Quin
+	email = jq9089@gmail.com
 
 [core]
     editor = /usr/bin/vim
