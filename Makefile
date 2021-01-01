@@ -23,6 +23,7 @@ install_oh_my_zsh:
 
 install_zsh:
 	ln -sf `pwd`/.zshrc ~/.zshrc
+	ln -sf `pwd`/.p10k.zsh ~/.p10k.zsh
 
 install_vim:
 	ln -sf `pwd`/.vimrc ~/.vimrc
