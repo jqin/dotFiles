@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
+# Disable automatic character escaping when pasting
+DISABLE_MAGIC_FUNCTIONS=true
+
 export TERM="xterm-256color"
 
 # Set name of the theme to load.
