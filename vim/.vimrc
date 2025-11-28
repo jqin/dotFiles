@@ -1,3 +1,4 @@
+" This vimrc is managed by vim-plug. Learn more at https://github.com/junegunn/vim-plug
 " Install vim-plug if missing
 let pluginstall=system("[ -e ~/.vim/autoload/plug.vim ] ; echo $?")
 if pluginstall != 0

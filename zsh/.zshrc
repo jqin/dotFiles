@@ -13,6 +13,8 @@ export TERM="xterm-256color"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 DEFAULT_USER="jay"
 
+# For a more modern and fast zsh experience, consider using a plugin manager
+# like zplug (https://github.com/zplug/zplug) or zgen (https://github.com/tarjoilija/zgen).
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
