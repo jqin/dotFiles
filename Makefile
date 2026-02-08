@@ -32,6 +32,8 @@ install_vim:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 install_tmux:
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	~/.tmux/plugins/tpm/bin/install_plugins
 	ln -sf `pwd`/.tmux.conf     ~/.tmux.conf
 	ln -sf `pwd`/.tmux_snapshot ~/.tmux_snapshot
 
