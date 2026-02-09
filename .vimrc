@@ -13,8 +13,6 @@ Plug 'itchyny/lightline.vim'              " Bottom status bar
 Plug 'edkolev/tmuxline.vim'               " Integration for tmux with lightline
 Plug 'christoomey/vim-tmux-navigator'     " Navigate between vim and tmux
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'kana/vim-operator-user'             " Dependency for vim-operator-flashy
-Plug 'haya14busa/vim-operator-flashy'     " Highlight yanked area
 
 filetype plugin on
 call plug#end()
@@ -70,10 +68,6 @@ function! LightLineFilename()
        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
 endfunction
-
-" Highlight yanked area
-map y <Plug>(operator-flashy)
-nmap Y <Plug>(operator-flashy)$
 
 " Mouse mode
 if has('mouse')
