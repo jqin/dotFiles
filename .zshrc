@@ -37,6 +37,10 @@ alias vi='vim'
 alias grep='grep --color=auto'
 alias tmux='tmux -2'
 alias gp='git pull'
+alias cc='claude'
+alias ccc='claude --continue'
+alias ccd='claude --dangerously-skip-permissions'
+alias ccr='claude --resume'
 
 # Where it gets saved
 HISTFILE=~/.history
@@ -82,3 +86,6 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by Antigravity
+export PATH="/Users/jay/.antigravity/antigravity/bin:$PATH"
