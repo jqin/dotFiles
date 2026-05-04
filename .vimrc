@@ -13,13 +13,14 @@ Plug 'itchyny/lightline.vim'              " Bottom status bar
 Plug 'edkolev/tmuxline.vim'               " Integration for tmux with lightline
 Plug 'christoomey/vim-tmux-navigator'     " Navigate between vim and tmux
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'joshdick/onedark.vim'               " One Dark colorscheme
 
 filetype plugin on
 call plug#end()
 
 " Lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
@@ -114,7 +115,13 @@ set nowb
 
 syntax on
 set t_Co=256
-colorscheme xoria256-pluk
+
+" Enable true color support if available (recommended by onedark.vim)
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+colorscheme onedark
 let mapleader=','
 
 " Toggle between source/header file
